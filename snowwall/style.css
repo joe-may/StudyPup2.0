@@ -57,7 +57,7 @@
       background-position: center;
       color: white;
       font-family: 'Titan One', cursive;
-      height: 100vh;
+      /* height: 100vh; */
       overflow: hidden;
     }
   
@@ -103,6 +103,8 @@
       font-family: 'Titan One';
       z-index: 800;
       
+
+      
     }
    
   .start {
@@ -125,6 +127,17 @@
       bottom: 0;
       height: 25%;
       z-index: 400;
+  }
+  .boss {
+    position: fixed;
+    width: 30%;
+    left: 50%;
+    top: 0;
+    margin-left: -15%;
+    z-index: 900;
+  }
+  .boss img {
+      width: 100%;
   }
   .snowmen {
       background-size: 100% 100%;

@@ -13,11 +13,11 @@ $('.lose').hide();
 ///// audio
 
 /////////
-var generateHearts = function () {
-  var heartsLoad = $('<li></li>').html('<img class=heart src="https://i.imgur.com/MQ88P97.png" />');
-  $("ul").append(heartsLoad);
-  console.log("generating!");
-  }
+// var generateHearts = function () {
+//   var heartsLoad = $('<li></li>').html('<img class=heart src="https://i.imgur.com/MQ88P97.png" />');
+//   $("ul").append(heartsLoad);
+//   console.log("generating!");
+//   }
 
 
 
@@ -28,11 +28,7 @@ const answerset = [
   { problem: "5 + 4 =", answer: "9"},
   { problem: "3 + 1 =", answer: "4"},
   { problem: "7 + 3 =", answer: "10"},
-  { problem: "6 + 3 =", answer: "9"},
-  { problem: "2 + 4 =", answer: "6"},
-  { problem: "3 + 4 =", answer: "7"},
-  { problem: "3 + 5 =", answer: "8"},
-  { problem: "2 + 2 =", answer: "4"}
+ 
 
 ]
 
@@ -43,17 +39,23 @@ $('.lose').hide();
 $('li').first().remove();
 $('li').first().remove();
 $('li').first().remove();
-generateHearts();
-generateHearts();
-generateHearts();
-// $("ul").append('<img src="https://i.imgur.com/MQ88P97.png" />');
-// $("li").html('<img src="https://i.imgur.com/MQ88P97.png" />');
+// generateHearts();
+// generateHearts();
+// generateHearts();
 
-
-$(document).mousemove(function(e) {
-  mouseX = e.pageX;
-  $('.obi').css("left", e.pageX);
+setTimeout(function() {
+    $('.kart2').animate({
+        left: "45%"
+    }, 20000);
 });
+
+
+
+
+// $(document).mousemove(function(e) {
+//   mouseX = e.pageX;
+//   $('.obi').css("left", e.pageX);
+// });
 
 var currentGameArray = [];
 var playerLives = 0;
@@ -89,6 +91,7 @@ console.log(currentGameArray);
  
   currentEquation();
   
+  boost = 5
 
   // when answer is clicked on
   $('.answers div').on('click',function() {
@@ -97,14 +100,17 @@ console.log(currentGameArray);
     if (clickedAnswer === theAnswer) {
       console.log("Correct!");
       $(this).fadeOut(1000, function() {
-          $('p').first().remove();
+        //   $('p').first().remove();
           currentGameArray.splice(randomProblemSelector,1);
           winningCheck();
           generateNextTurn();
           console.log(currentGameArray);
-       
+          $('.kart1').animate({
+            'left': boost + "%"
+        }, 1000);
+        
       });
-
+      
       // get new problem/answer 
 
     } else {
@@ -123,7 +129,7 @@ console.log(currentGameArray);
       
     }
   });
-
+  
 
   function generateNextTurn() {
     if (currentGameArray.length === 0){
@@ -136,6 +142,8 @@ console.log(currentGameArray);
 
     var problemHtml = $('<p></p>').html(selectedProblem);
     $(".problem").append(problemHtml);
+    boost = boost + 5;
+    
     
   }
   
