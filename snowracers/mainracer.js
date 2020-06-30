@@ -41,10 +41,16 @@ $('.lose').hide();
 $('li').first().remove();
 $('li').first().remove();
 $('li').first().remove();
+$('.kart2').finish().css('left', '0');
+$('.kart1').finish().css('left', '0%');
+$('.fline').finish().css('left', '100%');
+
+
 
 
 
 ///// animate kart2
+
 setTimeout(function() {
     $('.kart2').animate({
         left: "45%"
@@ -62,7 +68,7 @@ var interval = setInterval(function() {
     // Display 'counter' wherever you want to display it.
     if (counter <= 0 && currentGameArray.length > 0) {
      		clearInterval(interval);
-          $('#timer').html("<h3>Count down complete</h3>");
+          $('#timer').html("");
           console.log("you lose");
           $('.lose').show();
           $(".reset").html(" ");
@@ -70,7 +76,7 @@ var interval = setInterval(function() {
           
         return;
     }else{
-    	$('#time').text(counter);
+    	// $('#time').text(counter);
       console.log("Timer --> " + counter);
     }
 }, 1100);
@@ -177,13 +183,11 @@ console.log('keep playing');
     $(".start").show();
     $('.tryAgain').show()
     // generateHearts();
-    
-   
-    
   };
 }
   
 }); 
+
 
 
 // var generateHearts = function () {

@@ -1,5 +1,12 @@
 
+.movingBackground {
+	position: fixed;
+	width: 100%;
+	height: 40%;
+    left: 0;	
+	top: 0;
 
+}
 .time {
 	font-size: 30px;
   }
@@ -19,7 +26,7 @@
     position: fixed;
     bottom: 0;
     /* background-color: aqua; */
-    background: url("https://i.imgur.com/cqwZxKy.png");
+    
     width: 100%;
     height: 15%;
     left: 100;
@@ -30,7 +37,7 @@
   
   body {
       text-align: center;
-      background-color: aquamarine;
+      background-color: #e742e5;
       background-size: cover;
       background-position: center;
       color: white;
@@ -104,19 +111,19 @@
   }
   .kart1 {
       background-position: bottom;
-      width: 15%;
+      width: 20%;
       position: fixed;
       left: 0%;
-      bottom: 55%;
+      bottom: 25%;
       height: 25%;
       z-index: 400;
   }
   .kart2 {
 	background-position: bottom;
-	width: 15%;
+	width: 20%;
 	position: fixed;
 	left: 0%;
-	bottom: 35%;
+	bottom: 50%;
 	height: 25%;
 	z-index: 400;
 }
