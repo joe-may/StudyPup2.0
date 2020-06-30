@@ -25,11 +25,13 @@ const answerset = [
   { problem: "3 + 2 =", answer: "5"},
   { problem: "6 + 1 =", answer: "7"},
   { problem: "4 + 4 =", answer: "8"},
+  { problem: "2 + 9 =", answer: "11"},
   { problem: "5 + 4 =", answer: "9"},
   { problem: "3 + 1 =", answer: "4"},
   { problem: "7 + 3 =", answer: "10"},
- 
-
+  { problem: "6 + 6 =", answer: "12"},
+  { problem: "2 + 1 =", answer: "3"},
+  { problem: "3 + 3 =", answer: "6"},
 ]
 
 $('.start').on('click',function() {
@@ -39,16 +41,39 @@ $('.lose').hide();
 $('li').first().remove();
 $('li').first().remove();
 $('li').first().remove();
-// generateHearts();
-// generateHearts();
-// generateHearts();
 
+
+
+///// animate kart2
 setTimeout(function() {
     $('.kart2').animate({
         left: "45%"
     }, 20000);
 });
+///////// finish line
+$( ".fline" ).delay( 20000 ).animate({
+    left: "55%"
+},2200);
 
+/////timer and lose logic
+var counter = 20;
+var interval = setInterval(function() {
+    counter--;
+    // Display 'counter' wherever you want to display it.
+    if (counter <= 0 && currentGameArray.length > 0) {
+     		clearInterval(interval);
+          $('#timer').html("<h3>Count down complete</h3>");
+          console.log("you lose");
+          $('.lose').show();
+          $(".reset").html(" ");
+          $(".start").show();
+          
+        return;
+    }else{
+    	$('#time').text(counter);
+      console.log("Timer --> " + counter);
+    }
+}, 1100);
 
 
 
@@ -90,8 +115,9 @@ console.log(currentGameArray);
   }
  
   currentEquation();
+  ///boost varible
+  var boost = 5
   
-  boost = 5
 
   // when answer is clicked on
   $('.answers div').on('click',function() {
@@ -99,12 +125,11 @@ console.log(currentGameArray);
     
     if (clickedAnswer === theAnswer) {
       console.log("Correct!");
-      $(this).fadeOut(1000, function() {
-        //   $('p').first().remove();
+      $(this).fadeOut(200, function() {
           currentGameArray.splice(randomProblemSelector,1);
           winningCheck();
           generateNextTurn();
-          console.log(currentGameArray);
+          console.log(currentGameArray.length + "Current game array");
           $('.kart1').animate({
             'left': boost + "%"
         }, 1000);
@@ -118,17 +143,11 @@ console.log(currentGameArray);
       $('li').first().remove();
       console.log("False");
     };
-    if (playerLives === 3) {
-      $('.lose').show();
-      $(".reset").html(" ");
-      $(".start").show();
-      // generateHearts();
-      
-      
+    
 
-      
-    }
   });
+
+ 
   
 
   function generateNextTurn() {
