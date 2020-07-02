@@ -1,0 +1,323 @@
+
+  .footer { 
+      height: 200px;
+      bottom: 0;
+      width:100%;
+      left:0;
+      text-align: center;
+      margin: 200px 0px 0px 0px;
+  
+  }
+
+  html { 
+    background: url(https://i.imgur.com/iB0o1ow.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  
+  body {
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      font-family: 'Titan One', cursive;
+      overflow: hidden;
+    }
+
+    .answers {
+        position: fixed;
+        height: 50%;
+        top: 50%;
+        width: 100%;
+        z-index: 800;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .house {
+        width: 25%;
+    }
+    .house .iglooWrapper {
+        width:80%;  
+        display: inline-block;
+        position: relative;
+    }
+
+    .house .iglooWrapper .igloo {
+        width: 100%;   
+        position: absolute;
+        left:0px;
+        top: 0px;
+    }
+    .house .iglooWrapper .answer {
+        position: absolute;
+        color: #333;
+        font-size: 3.5rem;
+        left: 25%;
+        margin-top: 5%;
+    }
+    .house .iglooWrapper .penguin {
+        position: absolute;
+        width: 50%;
+        margin-top: 16%;
+
+    }
+  
+    
+    /* .answers div {
+        font-size: 7vh;
+        font-family: 'Titan One', cursive;
+        width: 20%;
+        color: black;
+        cursor: crosshair;
+        z-index: 600;
+    } */
+  
+    .problem p {
+        position: fixed;
+        border-radius: 5%;
+        background-color: cornsilk;
+        color: cadetblue;
+        font-size:6vw;
+        /* background-color: cornflowerblue; */
+        width: 20%;
+        margin-left: 42%;
+        top: 20%;
+        font-family: 'Titan One';
+        z-index: 800;
+    }
+   
+  .start {
+      position: fixed;
+      width: 20%;
+      left: 50%;
+      top: 50%;
+      margin-left: -10%;
+      font-family: 'Titan One';
+      font-size: 60px;
+      color: rgb(90, 170, 207) ;
+      border-radius: 20px 20px 20px 20px;
+      z-index: 800;
+  }
+  
+  .boss {
+    position: fixed;
+    width: 30%;
+    left: 50%;
+    top: 0;
+    margin-left: -15%;
+    z-index: 900;
+  }
+ 
+  .snowmen {
+      /* background-size: 75% 75%;
+      background-repeat: no-repeat;
+      background-image: url(https://i.imgur.com/peo6gAS.gif); */
+      cursor: url("https://i.imgur.com/PFfe6oi.png") , auto;
+      
+  }
+
+
+  .house .a0 {
+    width: 92%;
+    top: -24%;
+}
+ 
+  .house .a0 .answer {
+    left: 23%;
+} 
+  .house .a0 .penguin {
+    width: 41%;
+    margin-top: 24%;
+    margin-left: 3%;
+    transform: rotateY(180deg);
+} 
+
+
+
+  .house .a1 {
+    width: 80%;
+    top: -24%;
+}
+ 
+  .house .a1 .answer {
+    left: 23%;
+} 
+  .house .a1 .penguin {
+    width: 41%;
+    margin-top: 24%;
+    margin-left: 3%;
+    transform: rotateY(180deg);
+} 
+
+.house .a2 {
+    width: 79%;
+    top: -32%;
+    left: 27%;
+}
+  .house .a2 .igloo {
+    transform: rotateY(180deg);
+}
+  .house .a2 .answer {
+    left: 65%;
+} 
+  .house .a2 .penguin {
+    width: 43%;
+    margin-top: 22%;
+    margin-left: -45%;
+} 
+
+
+
+.house .a3 {
+    width: 94%;
+    top: -3%;
+    left: -3%;
+}
+  .house .a3 .igloo {
+    transform: rotateY(180deg);
+}
+  .house .a3 .answer {
+    left: 65%;
+} 
+  .house .a3 .penguin {
+    width: 43%;
+    margin-top: 22%;
+    margin-left: -45%;
+} 
+
+.house .a4 {
+    width: 127%;
+    top: -14%;
+}
+ 
+  .house .a4 .answer {
+    left: 23%;
+} 
+  .house .a4 .penguin {
+    width: 41%;
+    margin-top: 24%;
+    margin-left: 3%;
+    transform: rotateY(180deg);
+} 
+
+  .house .a5 {
+    width: 102%;
+    top: -63%;
+}
+ 
+  .house .a5 .answer {
+    left: 23%;
+} 
+  .house .a5 .penguin {
+    width: 41%;
+    margin-top: 24%;
+    margin-left: 3%;
+    transform: rotateY(180deg);
+} 
+
+.house .a6 {
+    width: 112%;
+    top: -43%;
+    left: 24%;
+}
+  .house .a6 .igloo {
+    transform: rotateY(180deg);
+}
+  .house .a6 .answer {
+    left: 65%;
+} 
+  .house .a6 .penguin {
+    width: 43%;
+    margin-top: 22%;
+    margin-left: -45%;
+} 
+
+.house .a7 {
+    width: 128%;
+    top: 10%;
+    left: -26%;
+}
+  .house .a7 .igloo {
+    transform: rotateY(180deg);
+}
+  .house .a7 .answer {
+    left: 65%;
+} 
+  .house .a7 .penguin {
+    width: 43%;
+    margin-top: 22%;
+    margin-left: -45%;
+} 
+
+
+
+ /* .answers div:nth-of-type(2) {
+    position: fixed;
+    top: 49%;
+    left: 27%;
+}
+        
+ .answers div:nth-of-type(3) {
+    position: fixed;
+    top: 47%;
+    left: 61%;
+    background-size: 75% 75%;
+    background-image: url(https://i.imgur.com/peo6gAS.gif);
+    background-repeat: no-repeat;
+    }
+.answers div:nth-of-type(4) {
+    position: fixed;
+    top: 51%;
+    left: 80%;
+}
+.answers div:nth-of-type(5) {
+    position: fixed;
+    top: 68%;
+    left: 60%;
+}
+.answers div:nth-of-type(6) {
+    position: fixed;
+    top: 81%;
+    left: 80%;
+}
+.answers div:nth-of-type(7) {
+    position: fixed;
+    top: 66%;
+    left: 17%;
+}
+.answers div:nth-of-type(8) {
+    position: fixed;
+    top: 77%;
+    left: 0%;
+} */
+  
+  .heart {
+      float: right;
+      height: 7%;
+      Width: 7%;
+  }
+  
+  
+  .win 
+   {
+      margin: -300px 60px -20px 90px;
+      background-color: cornsilk;
+      color: rgb(90, 170, 207);
+      margin: -150px 500px 40px 500px;
+   }
+   .lose {
+      text-align: center;
+      margin: -350px 400px 70px 410px;
+      font-family: 'Titan One';
+      font-size: 60px;
+      color: rgb(90, 170, 207) ;
+      border-radius: 20px 20px 20px 20px;
+      background-color: cornsilk;
+     
+  
+   }
+    

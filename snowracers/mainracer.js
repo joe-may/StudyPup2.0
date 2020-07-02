@@ -57,7 +57,7 @@ setTimeout(function() {
     }, 20000);
 });
 ///////// finish line
-$( ".fline" ).delay( 20000 ).animate({
+$( ".fline" ).delay( 20000 ).animate({  
     left: "55%"
 },2200);
 

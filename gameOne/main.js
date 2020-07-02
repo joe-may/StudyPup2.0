@@ -30,9 +30,7 @@ const answerset = [
   { problem: "7 + 3 =", answer: "10"},
   { problem: "6 + 3 =", answer: "9"},
   { problem: "2 + 4 =", answer: "6"},
-  { problem: "3 + 4 =", answer: "7"},
-  { problem: "3 + 5 =", answer: "8"},
-  { problem: "2 + 2 =", answer: "4"}
+ 
 
 ]
 
@@ -71,7 +69,7 @@ answerset.forEach(function(questions) {
 console.log(currentGameArray);
 
   $.each(currentGameArray, function(index,value){
-    $(".answers").append("<div class='snowmen' id='0'>" + value.answer + "</div>");
+    $(".answers").append("<div class='house'><div class='iglooWrapper "+'a'+index+"'><img src='../StudyPup_assets/igloo.png' class='igloo'><img src='../StudyPup_assets/penguin_transparent.gif' class='penguin'><div class='answer'>" + value.answer + "</div></div></div>");
     console.log("index: " + index + " problem: " + value.problem + " answer: " + value.answer );
   });
 
