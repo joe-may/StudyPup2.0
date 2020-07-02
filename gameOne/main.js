@@ -26,11 +26,12 @@ const answerset = [
   { problem: "3 + 2 =", answer: "5"},
   { problem: "6 + 1 =", answer: "7"},
   { problem: "4 + 4 =", answer: "8"},
-  { problem: "5 + 4 =", answer: "9"},
+  { problem: "1 + 2 =", answer: "3"},
   { problem: "3 + 1 =", answer: "4"},
   { problem: "7 + 3 =", answer: "10"},
   { problem: "6 + 3 =", answer: "9"},
   { problem: "2 + 4 =", answer: "6"},
+  
  
 
 ]
@@ -39,9 +40,9 @@ $('.start').on('click',function() {
 $('.start').hide();
 $('.win').hide();
 $('.lose').hide();
-$('li').first().remove();
-$('li').first().remove();
-$('li').first().remove();
+// $('li').first().remove();
+// $('li').first().remove();
+// $('li').first().remove();
 // generateHearts();
 // generateHearts();
 // generateHearts();
@@ -49,13 +50,13 @@ $('li').first().remove();
 
 
 
-$(document).mousemove(function(e) {
-  mouseX = e.pageX;
-  $('.obi').css("left", e.pageX);
-});
+// $(document).mousemove(function(e) {
+//   mouseX = e.pageX;
+//   $('.obi').css("left", e.pageX);
+// });
 
 var currentGameArray = [];
-var playerLives = 0;
+// var playerLives = 0;
 
 
 answerset.forEach(function(questions) {
@@ -90,20 +91,21 @@ console.log(currentGameArray);
   
 
   // when answer is clicked on
-  $('.answers div').on('click',function() {
+  $('.house').on('click',function() {
     var clickedAnswer = $(this).text();
     
     if (clickedAnswer === theAnswer) {
       console.log("Correct!");
       $(this).find('.answer').fadeOut(1000, function() {
-        $(this).parent('.iglooWrapper').prepend("<img src='' class='penguin'>")
+        $(this).parent('.iglooWrapper').prepend("<img src='' class='penguin'>");
+        console.log(currentGameArray.length);
         var penguin = $(this).parent().find('.penguin');
         penguin.attr("src", "../StudyPup_assets/penguin_transparent.gif");
         
           currentGameArray.splice(randomProblemSelector,1);
+          console.log(currentGameArray.length);
           winningCheck();
           generateNextTurn();
-          console.log(currentGameArray);
           console.log($(this).parent());
           setTimeout(function() {
             penguin.attr("src", "").remove();
@@ -119,17 +121,18 @@ console.log(currentGameArray);
       $('li').first().remove();
       console.log("False");
     };
-    if (playerLives === 3) {
-      $('.lose').show();
-      $(".reset").html(" ");
-      $(".start").show();
-      // generateHearts();
+  });
+    // if (playerLives === 3) {
+    //   $('.lose').show();
+    //   $(".reset").html(" ");
+    //   $(".start").show();
+    //   // generateHearts();
       
       
 
       
-    }
-  });
+  //   }
+  
 
 
   function generateNextTurn() {
@@ -156,6 +159,7 @@ console.log('keep playing');
     $(".reset").html(" ");
     $(".start").show();
     $('.tryAgain').show()
+    console.log('you win')
     // generateHearts();
     
    
