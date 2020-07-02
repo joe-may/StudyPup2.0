@@ -5,6 +5,7 @@ $('.win').hide();
 $('.lose').hide();
 
 
+
 //////animations
 
 
@@ -69,7 +70,7 @@ answerset.forEach(function(questions) {
 console.log(currentGameArray);
 
   $.each(currentGameArray, function(index,value){
-    $(".answers").append("<div class='house'><div class='iglooWrapper "+'a'+index+"'><img src='../StudyPup_assets/igloo.png' class='igloo'><img src='../StudyPup_assets/penguin_transparent.gif' class='penguin'><div class='answer'>" + value.answer + "</div></div></div>");
+    $(".answers").append("<div class='house'><div class='iglooWrapper "+'a'+index+"'><img src='../StudyPup_assets/igloo.png' class='igloo'><img src='../StudyPup_assets/penguin_transparent.gif' class='penguin hide'><div class='answer'>" + value.answer + "</div></div></div>");
     console.log("index: " + index + " problem: " + value.problem + " answer: " + value.answer );
   });
 
@@ -94,14 +95,22 @@ console.log(currentGameArray);
     
     if (clickedAnswer === theAnswer) {
       console.log("Correct!");
-      $(this).fadeOut(1000, function() {
-        //   $('p').first().remove();
+      $(this).find('.answer').fadeOut(1000, function() {
+        $(this).parent('.iglooWrapper').prepend("<img src='' class='penguin'>")
+        var penguin = $(this).parent().find('.penguin');
+        penguin.attr("src", "../StudyPup_assets/penguin_transparent.gif");
+        
           currentGameArray.splice(randomProblemSelector,1);
           winningCheck();
           generateNextTurn();
           console.log(currentGameArray);
-       
+          console.log($(this).parent());
+          setTimeout(function() {
+            penguin.attr("src", "").remove();
+        }, 3200)
       });
+
+   
 
       // get new problem/answer 
 

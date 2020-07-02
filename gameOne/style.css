@@ -27,6 +27,13 @@
       overflow: hidden;
     }
 
+   .hide {
+       display: none;
+   }
+   .penguin {
+    background-repeat: no-repeat;
+    z-index: 1000;
+   }
     .answers {
         position: fixed;
         height: 50%;
@@ -40,6 +47,8 @@
     .house {
         width: 25%;
     }
+
+
     .house .iglooWrapper {
         width:80%;  
         display: inline-block;
