@@ -57,16 +57,24 @@ answerset.forEach(function(questions) {
 
 console.log(currentGameArray);
 
-  $.each(currentGameArray, function(index,value){
-    $(".answers").append("<div class='house'><div class='iglooWrapper "+'a'+index+"'><img src='https://i.imgur.com/DsWjPxC.png' class='scoop'><img src='../StudyPup_assets/penguin_transparent.gif' class='penguin hide'><div class='answer'>" + value.answer + "</div></div></div>");
-    console.log("index: " + index + " problem: " + value.problem + " answer: " + value.answer );
-  });
+  // $.each(currentGameArray, function(index,value){
+  //   $(".answers").append("<div class='house'><div class='iglooWrapper "+'a'+index+"'><img src='https://i.imgur.com/DsWjPxC.png' class='scoop'><img src='../StudyPup_assets/penguin_transparent.gif' class='penguin hide'><div class='answer'>" + value.answer + "</div></div></div>");
+  //   console.log("index: " + index + " problem: " + value.problem + " answer: " + value.answer );
+  // });
 
  
   var counter = 30000;
  
+//////up counter 
+$('.countUp').click(function() {
+  $('.output').html(function(i, val) { return val*1+1 });
+});
+///// down counter
+$('.countDown').click(function() {
+  $('.output').html(function(i, val) { return val*1-1 });
+});
 
-  
+////////////timer
   var interval = setInterval(function() {
     counter--;
     // Display 'counter' wherever you want to display it.
@@ -100,12 +108,12 @@ console.log(currentGameArray);
   
 
   // when answer is clicked on
-  $('.house').on('click',function() {
-    var clickedAnswer = $(this).text();
+  $('.create').on('click',function() {
+    var clickedAnswer = $('.output').text();
     
     if (clickedAnswer === theAnswer) {
       console.log("Correct!");
-      $(this).find('.iglooWrapper').fadeOut(1000, function() {
+      
         $( "p" ).remove();
           currentGameArray.splice(randomProblemSelector,1);
           console.log(currentGameArray.length);
@@ -113,7 +121,7 @@ console.log(currentGameArray);
           generateNextTurn();
           console.log($(this).parent());
           
-      });
+      
 
    
 
