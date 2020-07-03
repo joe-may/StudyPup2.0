@@ -18,13 +18,25 @@
     overflow: hidden;
   }
   
+  #time{
+      
+    font-size: 30px;
+  }
   
+  .snowball {
+      width: 5%;
+      position:absolute;
+	  top:90%;
+	  left:40%;
+	  z-index:1000;
+
+  }
   body {
       text-align: center;
       background-size: cover;
       background-position: center;
       color: white;
-      font-family: 'Titan One', cursive;
+      font-family: 'Titan One';
       overflow: hidden;
     }
 
@@ -37,6 +49,7 @@
    }
     .answers {
         position: fixed;
+        font-size: 5vh;
         height: 50%;
         top: 50%;
         width: 100%;
@@ -47,6 +60,7 @@
 
     .house {
         width: 25%;
+        cursor: crosshair;  
     }
 
 
@@ -65,7 +79,7 @@
     .house .iglooWrapper .answer {
         position: absolute;
         color: #333;
-        font-size: 3.5rem;
+        font-size: 8vh;
         left: 25%;
         margin-top: 5%;
     }
@@ -98,19 +112,22 @@
         top: 20%;
         font-family: 'Titan One';
         z-index: 800;
+        cursor: crosshair; 
     }
    
   .start {
-      position: fixed;
-      width: 20%;
-      left: 50%;
-      top: 50%;
-      margin-left: -10%;
-      font-family: 'Titan One';
-      font-size: 60px;
-      color: rgb(90, 170, 207) ;
-      border-radius: 20px 20px 20px 20px;
-      z-index: 800;
+    position: fixed;
+    width: 20%;
+    left: 50%;
+    top: 50%;
+    margin-left: -10%;
+    font-family: 'Titan One';
+    font-size:5vw;
+    color: rgb(90, 170, 207) ;
+    border-radius: 30px 30px 30px 30px;
+    z-index: 800;
+    cursor: pointer;
+    
   }
   
   .boss {
@@ -122,18 +139,19 @@
     z-index: 900;
   }
  
-  .snowmen {
+  /* .snowmen {
       /* background-size: 75% 75%;
       background-repeat: no-repeat;
       background-image: url(https://i.imgur.com/peo6gAS.gif); */
-      cursor: url("https://i.imgur.com/PFfe6oi.png") , auto;
+      /* cursor: url("https://i.imgur.com/PFfe6oi.png") , auto; */
       
-  }
+ 
 
 
   .house .a0 {
     width: 92%;
     top: -24%;
+    
 }
  
   .house .a0 .answer {

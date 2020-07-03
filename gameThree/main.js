@@ -27,6 +27,7 @@ const answerset = [
   { problem: "6 + 3 =", answer: "9"},
   { problem: "2 + 4 =", answer: "6"},
   
+  
 ]
 
 $('.start').on('click',function() {
@@ -57,12 +58,12 @@ answerset.forEach(function(questions) {
 console.log(currentGameArray);
 
   $.each(currentGameArray, function(index,value){
-    $(".answers").append("<div class='house'><div class='iglooWrapper "+'a'+index+"'><img src='../StudyPup_assets/igloo.png' class='igloo'><img src='../StudyPup_assets/penguin_transparent.gif' class='penguin hide'><div class='answer'>" + value.answer + "</div></div></div>");
+    $(".answers").append("<div class='house'><div class='iglooWrapper "+'a'+index+"'><img src='https://i.imgur.com/DsWjPxC.png' class='scoop'><img src='../StudyPup_assets/penguin_transparent.gif' class='penguin hide'><div class='answer'>" + value.answer + "</div></div></div>");
     console.log("index: " + index + " problem: " + value.problem + " answer: " + value.answer );
   });
 
  
-  var counter = 25;
+  var counter = 30000;
  
 
   
