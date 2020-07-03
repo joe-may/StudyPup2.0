@@ -106,10 +106,7 @@ console.log(currentGameArray);
     if (clickedAnswer === theAnswer) {
       console.log("Correct!");
       $(this).find('.iglooWrapper').fadeOut(1000, function() {
-    
-        console.log(currentGameArray.length);
-
-        
+        $( "p" ).remove();
           currentGameArray.splice(randomProblemSelector,1);
           console.log(currentGameArray.length);
           winningCheck();
