@@ -100,25 +100,22 @@ console.log(currentGameArray);
   
 
   // when answer is clicked on
-  $('.iglooWrapper').on('click',function() {
+  $('.house').on('click',function() {
     var clickedAnswer = $(this).text();
     
     if (clickedAnswer === theAnswer) {
       console.log("Correct!");
-      $(this).find('.answer').fadeOut(1000, function() {
-        $(this).parent('.iglooWrapper').prepend("<img src='' class='penguin'>");
+      $(this).find('.iglooWrapper').fadeOut(1000, function() {
+    
         console.log(currentGameArray.length);
-        var penguin = $(this).parent().find('.penguin');
-        penguin.attr("src", "../StudyPup_assets/penguin_transparent.gif");
+
         
           currentGameArray.splice(randomProblemSelector,1);
           console.log(currentGameArray.length);
           winningCheck();
           generateNextTurn();
           console.log($(this).parent());
-          setTimeout(function() {
-            penguin.attr("src", "").remove();
-        }, 3200)
+          
       });
 
    
