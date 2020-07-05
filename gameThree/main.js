@@ -1,31 +1,28 @@
 
 $('.win').hide();
 $('.lose').hide();
+//////up counter 
+$('.countUp').click(function() {
+  $('.output').html(function(i, val) { return val*1+1 });
+});
+///// down counter
+$('.countDown').click(function() {
+  $('.output').html(function(i, val) { return val*1-1 });
+});
 
 
 ////snowball throw
-$('body').click(function(e) {
-  var parentOffset = $(this).parent().offset();
-   var relX = e.pageX - parentOffset.left;
-   var relY = e.pageY - parentOffset.top;
-  $(".snowball").animate({
-      width: '10px',
-      left: relX,
-      top: relY
-  }, 200, function() {
-      $(".snowball").removeAttr('style');
-  });
-});
 
-const answerset = [
+
+var answerset = [
   { problem: "3 + 2 =", answer: "5"},
   { problem: "6 + 1 =", answer: "7"},
   { problem: "4 + 4 =", answer: "8"},
-  { problem: "1 + 2 =", answer: "3"},
-  { problem: "3 + 1 =", answer: "4"},
-  { problem: "7 + 3 =", answer: "10"},
-  { problem: "6 + 3 =", answer: "9"},
-  { problem: "2 + 4 =", answer: "6"},
+  // { problem: "1 + 2 =", answer: "3"},
+  // { problem: "3 + 1 =", answer: "4"},
+  // { problem: "7 + 3 =", answer: "10"},
+  // { problem: "6 + 3 =", answer: "9"},
+  // { problem: "2 + 4 =", answer: "6"},
   
   
 ]
@@ -48,7 +45,7 @@ var currentGameArray = [];
 
 answerset.forEach(function(questions) {
   currentGameArray.push(questions)
-})
+});
 
 
   var randomProblemSelector = Math.floor((Math.random() * currentGameArray.length));
@@ -57,42 +54,37 @@ answerset.forEach(function(questions) {
 
 console.log(currentGameArray);
 
+console.log(selectedProblem);
+
   // $.each(currentGameArray, function(index,value){
   //   $(".answers").append("<div class='house'><div class='iglooWrapper "+'a'+index+"'><img src='https://i.imgur.com/DsWjPxC.png' class='scoop'><img src='../StudyPup_assets/penguin_transparent.gif' class='penguin hide'><div class='answer'>" + value.answer + "</div></div></div>");
   //   console.log("index: " + index + " problem: " + value.problem + " answer: " + value.answer );
   // });
 
  
-  var counter = 30000;
+  // var counter = 30000;
  
-//////up counter 
-$('.countUp').click(function() {
-  $('.output').html(function(i, val) { return val*1+1 });
-});
-///// down counter
-$('.countDown').click(function() {
-  $('.output').html(function(i, val) { return val*1-1 });
-});
+
 
 ////////////timer
-  var interval = setInterval(function() {
-    counter--;
-    // Display 'counter' wherever you want to display it.
-    if (counter <= 0 && currentGameArray.length > 0) {
-         clearInterval(interval);
-          // $('#time').text(counter);
-          console.log("you lose");
-          $('.lose').show();
-          $(".reset").html(" ");
-          $(".start").show();
+//   var interval = setInterval(function() {
+//     counter--;
+//     // Display 'counter' wherever you want to display it.
+//     if (counter <= 0 && currentGameArray.length > 0) {
+//          clearInterval(interval);
+//           // $('#time').text(counter);
+//           console.log("you lose");
+//           $('.lose').show();
+//           $(".reset").html(" ");
+//           $(".start").show();
           
-        return;
-    }else{
-      $('#time').text(counter);
+//         return;
+//     }else{
+//       $('#time').text(counter);
       
-      console.log("Timer --> " + counter);
-    }
-}, 1000);
+//       console.log("Timer --> " + counter);
+//     }
+// }, 1000);
 
   
 
@@ -100,7 +92,8 @@ $('.countDown').click(function() {
   
   var currentEquation = function () {
     var problemHtml = $('<p></p>').html(selectedProblem);
-    return $(".problem").append(problemHtml);
+    return $(".problem").html(problemHtml);
+    console.log(problemHtml);
       
   }
  
@@ -111,16 +104,26 @@ $('.countDown').click(function() {
   $('.create').on('click',function() {
     var clickedAnswer = $('.output').text();
     
+    console.log(theAnswer);
+    console.log(clickedAnswer);
+    console.log(selectedProblem);
+
+    
     if (clickedAnswer === theAnswer) {
       console.log("Correct!");
+     
       
-        $( "p" ).remove();
-          currentGameArray.splice(randomProblemSelector,1);
+      currentGameArray.splice(randomProblemSelector,1);
+      $('p').remove();
+        
+        generateNextTurn();
+          console.log(currentGameArray);
           console.log(currentGameArray.length);
-          winningCheck();
-          generateNextTurn();
-          console.log($(this).parent());
+          console.log(currentGameArray[randomProblemSelector]);
           
+          winningCheck();
+          console.log($(this).parent());
+          console.log(selectedProblem);
       
 
    
@@ -128,7 +131,7 @@ $('.countDown').click(function() {
       // get new problem/answer 
 
     } else {
-     
+     console.log('wrong!!!!');
     };
   });
     // if (playerLives === 3) {
@@ -151,7 +154,7 @@ $('.countDown').click(function() {
     randomProblemSelector = Math.floor((Math.random() * currentGameArray.length));
     selectedProblem = currentGameArray[randomProblemSelector].problem;
     theAnswer = currentGameArray[randomProblemSelector].answer;
-    //$("p").first().html(selectedProblem);
+    // $("p").first().html(selectedProblem);
 
     var problemHtml = $('<p></p>').html(selectedProblem);
     $(".problem").append(problemHtml);
@@ -162,14 +165,31 @@ $('.countDown').click(function() {
   function winningCheck() {
   
   if (currentGameArray.length > 0){
-console.log('keep playing');
+    console.log('keep playing');
   } else {
     $('.win').show();
     $(".reset").html(" ");
     $(".start").show();
     $('.tryAgain').show();
-    clearInterval(interval);
-    console.log('you win')
+    generateNextTurn();
+    currentEquation = null;
+    theAnswer = null;
+    selectedProblem = null;
+
+    
+
+
+
+    console.log('keep playing');
+    
+
+   
+
+    // clearInterval(interval);
+   
+    console.log(currentGameArray);
+    console.log('you win');
+    
     // generateHearts();
     
    
