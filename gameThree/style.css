@@ -47,6 +47,41 @@
     background: lightgrey;
   }
 
+  .container {position: relative;}
+
+  .redLight {
+    height: 100px; 
+    width: 100px; 
+    background-color: #777;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    opacity: 0;
+    z-index: 1000;
+}
+
+  .greenLight {
+    height: 100px; 
+    width: 100px; 
+    background-color: #777;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    opacity: 0;
+    z-index: 1000;
+}
+
+.finishedCone {
+  position: fixed;
+  height: 37%; 
+  width: 10%; 
+  position: absolute;
+  left: 20%;
+  top: 56%;
+  z-index: 200;
+}
+
+
   .createMachine {
     position: fixed;
     width: 38%;
@@ -54,7 +89,34 @@
     left: 3%;
     top: 56%;
     background: lightgrey;
+    z-index: 400;
   }
+
+  @-webkit-keyframes demo {
+    0% {
+        background-color: green;
+        opacity:1;
+    }
+    22% {
+        background-color: greenyellow;
+    }
+    77% {
+        background-color: greenyellow;
+    }
+    100% {
+        background-color: greenyellow;
+    }
+}
+    
+.demo {
+    -webkit-animation-name: demo;
+    -webkit-animation-duration: 900ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+}    
+
+
+
 
   /* html { 
     background: url(https://i.imgur.com/iB0o1ow.jpg) no-repeat center center fixed; 

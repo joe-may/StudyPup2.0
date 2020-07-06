@@ -98,6 +98,15 @@ console.log(selectedProblem);
   }
  
   currentEquation();
+
+
+  ///////////green light on and off
+  $("#go").click(function() {
+    $("#box").removeClass("demo");
+    setTimeout(function() {
+        $("#box").addClass("demo");
+    }, 1);
+});
   
 
   // when answer is clicked on
@@ -124,7 +133,17 @@ console.log(selectedProblem);
           winningCheck();
           console.log($(this).parent());
           console.log(selectedProblem);
+
+          $(".greenLight").removeClass("demo");
+          setTimeout(function() {
+         $(".greenLight").addClass("demo");
+    }, 1);
       
+    setTimeout(function() {
+      $('.finishedCone').animate({
+          left: "120%"
+      }, 3000);
+  });
 
    
 
@@ -132,6 +151,10 @@ console.log(selectedProblem);
 
     } else {
      console.log('wrong!!!!');
+     $(".redLight").removeClass("demo");
+     setTimeout(function() {
+    $(".redLight").addClass("demo");
+}, 1);
     };
   });
     // if (playerLives === 3) {
