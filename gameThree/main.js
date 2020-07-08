@@ -1,6 +1,7 @@
 
 $('.win').hide();
 $('.lose').hide();
+
 //////up counter 
 $('.countUp').click(function() {
   $('.output').html(function(i, val) { return val*1+1 });
@@ -51,10 +52,16 @@ answerset.forEach(function(questions) {
   var randomProblemSelector = Math.floor((Math.random() * currentGameArray.length));
   var selectedProblem = currentGameArray[randomProblemSelector].problem;
   var theAnswer = currentGameArray[randomProblemSelector].answer;
+    
 
 console.log(currentGameArray);
 
 console.log(selectedProblem);
+
+console.log(randomProblemSelector);
+
+// $('.scoop').attr("src", "../StudyPup_assets/scope-"+selectedProblem+".gif");
+// $('.cone').attr("src", "../StudyPup_assets/cone-"+selectedProblem+".gif");
 
   // $.each(currentGameArray, function(index,value){
   //   $(".answers").append("<div class='house'><div class='iglooWrapper "+'a'+index+"'><img src='https://i.imgur.com/DsWjPxC.png' class='scoop'><img src='../StudyPup_assets/penguin_transparent.gif' class='penguin hide'><div class='answer'>" + value.answer + "</div></div></div>");
@@ -108,6 +115,22 @@ console.log(selectedProblem);
     }, 1);
 });
   
+///////////change button img
+$('.countUp').click(function(){
+  $('.countUp').hide();
+  setTimeout(function() {
+ $('.countUp').show();
+}, 100);
+});
+
+$('.countDown').click(function(){
+  $('.countDown').hide();
+  setTimeout(function() {
+ $('.countDown').show();
+}, 100);
+});
+  
+
 
   // when answer is clicked on
   $('.create').on('click',function() {
@@ -138,12 +161,7 @@ console.log(selectedProblem);
           setTimeout(function() {
          $(".greenLight").addClass("demo");
     }, 1);
-      
-    setTimeout(function() {
-      $('.finishedCone').animate({
-          left: "120%"
-      }, 3000);
-  });
+    
 
    
 

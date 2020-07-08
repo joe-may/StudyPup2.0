@@ -1,3 +1,18 @@
+.skeletonBackground {
+  position: fixed;
+  width: 120vw;
+  left: 14%;
+  height: 100vh;
+  top: -2%;
+  margin-left: -18%;
+  font-family: 'Titan One';
+  font-size: 9vh;
+  color: rgb(90, 170, 207);
+  border-radius: 30px 30px 30px 30px;
+  z-index: 800;
+  cursor: pointer;
+}
+
 
   .footer { 
       height: 200px;
@@ -9,42 +24,57 @@
   
   }
 
-  .cone {
+  .yellowBox {
     position: fixed;
-    width: 33%;
-    left: 4%;
-    top: 5%;
-    transform: rotate(90deg);
-    background-color: lightgray;
+    top: 9%;
+    left: 52%;
+    z-index: 1000;
+    width: 44%;
   }
-  .scoopAndOutput {
-    position: fixed;
-    top: 15%;
-    left: 46%;
-  }
+.yellowBox .ybox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 300;
+}
+  
+.scoopAndOutput {
+    position: relative;
+    margin-top: -56%;
+    width: 100%;
+    height: 33%;
+    z-index: 900;
+    margin-left: -12%;
+}
 
   .scoop {
     position: relative;
-    margin-top: 9%;
-    left: 21%;
-    width: 111%;
+    margin-top: 8%;
+    left: 19%;
+    width: 43%;
   }
 
   .output {
-    margin-top: -46%;
-    left: 29%;
-    font-size: 10vh;
+    margin-top: -32%;
+    left: 36%;
+    font-size: 9vw;
     position: relative;
   }
   
 
-  .fridge {
+  .greenBox {
     position: fixed;
-    width: 49%;
-    height: 50%;
-    left: 50%;
-    top: 6%;
-    background: lightgrey;
+    top: 51%;
+    left: 5%;
+    z-index: 1000;
+    width: 30%;
+  }
+
+  .greenBox .gbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 300;
   }
 
   .container {position: relative;}
@@ -71,15 +101,7 @@
     z-index: 1000;
 }
 
-.finishedCone {
-  position: fixed;
-  height: 37%; 
-  width: 10%; 
-  position: absolute;
-  left: 20%;
-  top: 56%;
-  z-index: 200;
-}
+
 
 
   .createMachine {
@@ -118,18 +140,23 @@
 
 
 
-  /* html { 
-    background: url(https://i.imgur.com/iB0o1ow.jpg) no-repeat center center fixed; 
+  html { 
+    background: url('../StudyPup_assets/Ice_Cream_Game_Background.png') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     overflow: hidden;
-  } */
+  }
   
-  #time{
+  #timer{
       
     font-size: 30px;
+    z-index: 1000;
+    position: fixed;
+    top: 0%;
+    left: 50%;
+
   }
   
   /* .snowball {
@@ -141,10 +168,7 @@
 
   } */
   body {
-      text-align: center;
-      background-size: cover;
-      background-position: center;
-      color:blue;
+     
       font-family: 'Titan One';
       /* overflow: hidden; */
     }
@@ -179,27 +203,45 @@
     } */
 
     .guessCounter {
-      position: fixed;
-      left: 69%;
-      top: 15%;
+      position: relative;
+      left: -22%;
+      top: 16%;
       z-index: 1000;
     }
 
      .countDown {
-      position: fixed;
-      width: 15%;
-      height: 15%;
-      top: 39%;
-      left: 82%;
+      position: absolute;
+      width: 23%;
+      margin-top: -21%;
+      left: 81%;
+      z-index: 1000;
     }
 
-    .countUp {
-      position: fixed;
-      width: 15%;
-      height: 15%;
-      top: 8%;
-      left: 82%;
+    .countDownClicked {
+      position: absolute;
+      width: 23%;
+      margin-top: -21%;
+      left: 81%;
+      z-index: 900;
     }
+
+
+
+    .countUp {
+      position: absolute;
+      width: 23%;
+      margin-top: -52%;
+      left: 81%;
+      z-index: 1000;
+    }
+
+    .countUpClicked{
+      position: absolute;
+      width: 23%;
+      margin-top: -52%;
+      left: 81%;
+      z-index: 900;
+  }
 
 
     .house .iglooWrapper {
@@ -238,20 +280,35 @@
         cursor: crosshair;
         z-index: 600;
     } */
-  
-    .problem p {
-        position: fixed;
-        border-radius: 5%;
-        color: cadetblue;
-        font-size:8vw;
-        background: url(https://i.imgur.com/79vxYQX.png);
-        width: 26%;
-        margin-left: 8%;
-        top: 9%;
-        font-family: 'Titan One';
-        z-index: 800;
-        cursor: crosshair; 
+    .blueBox {
+      position: fixed;
+      width: 34%;
+      left: 11%;
+      top: 17%;
+      z-index: 1000;
+
     }
+
+    .blueBox img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+   
+    .problem p {
+      position: fixed;
+    /* width: 34%; */
+    left: 16%;
+    top: 18%;
+    /* margin-left: -10%; */
+    /* font-family: 'Titan One'; */
+    font-size: 8vw;
+    color: rgb(90, 170, 207);
+    border-radius: 30px 30px 30px 30px;
+    z-index: 800;
+    cursor: pointer;
+  }
+    
    
     .create {
       position: fixed;
@@ -277,7 +334,7 @@
     font-size:5vw;
     color: rgb(90, 170, 207) ;
     border-radius: 30px 30px 30px 30px;
-    z-index: 800;
+    z-index: 1200;
     cursor: pointer;
     
   }
