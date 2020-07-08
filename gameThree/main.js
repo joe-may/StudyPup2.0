@@ -1,6 +1,9 @@
 
 $('.win').hide();
 $('.lose').hide();
+$('.redlight').hide();
+$('.greenlight').hide();
+
 
 //////up counter 
 $('.countUp').click(function() {
@@ -157,10 +160,12 @@ $('.countDown').click(function(){
           console.log($(this).parent());
           console.log(selectedProblem);
 
-          $(".greenLight").removeClass("demo");
-          setTimeout(function() {
-         $(".greenLight").addClass("demo");
-    }, 1);
+          
+            $('.greenlight').show();
+            setTimeout(function() {
+           $('.greenlight').hide();
+          }, 500);
+          
     
 
    
@@ -169,10 +174,10 @@ $('.countDown').click(function(){
 
     } else {
      console.log('wrong!!!!');
-     $(".redLight").removeClass("demo");
+     $('.redlight').show();
      setTimeout(function() {
-    $(".redLight").addClass("demo");
-}, 1);
+      $('.redlight').hide();
+     }, 500);
     };
   });
     // if (playerLives === 3) {

@@ -77,18 +77,42 @@
     z-index: 300;
   }
 
+  .lights {
+    position: fixed;
+    top: 37%;
+    left: 6%;
+    width: 10%;
+    height: 10%;
+    z-index: 1000;
+  }
+
+   .lights .redlight {
+    position: absolute;
+    top: 26%;
+    width: 114%;
+    height: 154%;
+    z-index: 1500;
+  }
+
+  .lights .greenlight {
+    position: absolute;
+    top: 26%;
+    width: 114%;
+    height: 154%;
+    z-index: 1400;
+  }
+
+  .lights .clearlight {
+    position: absolute;
+    top: 26%;
+    width: 114%;
+    height: 154%;
+    z-index: 1400;
+  }
+
   .container {position: relative;}
 
-  .redLight {
-    height: 100px; 
-    width: 100px; 
-    background-color: #777;
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    opacity: 0;
-    z-index: 1000;
-}
+  
 
   .greenLight {
     height: 100px; 
@@ -313,8 +337,8 @@
     .create {
       position: fixed;
       width: 22%;
-      left: 20%;
-      top: 57%;
+      left: 22%;
+      top: 66%;
       margin-left: -10%;
       font-family: 'Titan One';
       font-size: 5vw;
