@@ -1,7 +1,7 @@
 
 $('.win').hide();
 $('.lose').hide();
-
+$('.create').hide();
 
 
 //////up counter 
@@ -34,6 +34,7 @@ $('.start').on('click',function() {
 $('.start').hide();
 $('.win').hide();
 $('.lose').hide();
+$('.create').show();
 
 
 
@@ -145,9 +146,9 @@ $('.countDown').click(function(){
       console.log("Correct!");
 
       console.log(currentGameArray.length);
-      $('.iceCreamDude').prepend("<img src='' class='penguinIcecream'>");
+      $('.greenBox').prepend("<img src='' class='penguinIcecream'>");
       var penguin = $('.penguinIcecream');
-      penguin.attr("src", "../StudyPup_assets/peguin-icecream.gif");
+      penguin.attr("src", "../StudyPup_assets/Penguin_Gets_Ice_Cream_.gif");
 
       
       
