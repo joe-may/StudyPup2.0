@@ -1,8 +1,7 @@
 
 $('.win').hide();
 $('.lose').hide();
-$('.redlight').hide();
-$('.greenlight').hide();
+
 
 
 //////up counter 
@@ -72,29 +71,27 @@ console.log(randomProblemSelector);
   // });
 
  
-  // var counter = 30000;
+  var counter = 25;
  
-
-
 ////////////timer
-//   var interval = setInterval(function() {
-//     counter--;
-//     // Display 'counter' wherever you want to display it.
-//     if (counter <= 0 && currentGameArray.length > 0) {
-//          clearInterval(interval);
-//           // $('#time').text(counter);
-//           console.log("you lose");
-//           $('.lose').show();
-//           $(".reset").html(" ");
-//           $(".start").show();
+  var interval = setInterval(function() {
+    counter--;
+    // Display 'counter' wherever you want to display it.
+    if (counter <= 0 && currentGameArray.length > 0) {
+         clearInterval(interval);
+          // $('#time').text(counter);
+          console.log("you lose");
+          $('.lose').show();
+          $(".reset").html(" ");
+          $(".start").show();
           
-//         return;
-//     }else{
-//       $('#time').text(counter);
+        return;
+    }else{
+      $('#time').text(counter);
       
-//       console.log("Timer --> " + counter);
-//     }
-// }, 1000);
+      console.log("Timer --> " + counter);
+    }
+}, 1000);
 
   
 
@@ -111,12 +108,12 @@ console.log(randomProblemSelector);
 
 
   ///////////green light on and off
-  $("#go").click(function() {
-    $("#box").removeClass("demo");
-    setTimeout(function() {
-        $("#box").addClass("demo");
-    }, 1);
-});
+//   $("#go").click(function() {
+//     $("#box").removeClass("demo");
+//     setTimeout(function() {
+//         $("#box").addClass("demo");
+//     }, 1);
+// });
   
 ///////////change button img
 $('.countUp').click(function(){
@@ -146,11 +143,19 @@ $('.countDown').click(function(){
     
     if (clickedAnswer === theAnswer) {
       console.log("Correct!");
-     
+
+      console.log(currentGameArray.length);
+      $('.iceCreamDude').prepend("<img src='' class='penguinIcecream'>");
+      var penguin = $('.penguinIcecream');
+      penguin.attr("src", "../StudyPup_assets/peguin-icecream.gif");
+
+      
       
       currentGameArray.splice(randomProblemSelector,1);
       $('p').remove();
         
+
+
         generateNextTurn();
           console.log(currentGameArray);
           console.log(currentGameArray.length);
@@ -159,37 +164,17 @@ $('.countDown').click(function(){
           winningCheck();
           console.log($(this).parent());
           console.log(selectedProblem);
-
           
-            $('.greenlight').show();
-            setTimeout(function() {
-           $('.greenlight').hide();
-          }, 500);
-          
-    
-
-   
-
-      // get new problem/answer 
+  
+          setTimeout(function() {
+            penguin.attr("src", "").remove();
+        }, 2500);
 
     } else {
      console.log('wrong!!!!');
-     $('.redlight').show();
-     setTimeout(function() {
-      $('.redlight').hide();
-     }, 500);
     };
   });
-    // if (playerLives === 3) {
-    //   $('.lose').show();
-    //   $(".reset").html(" ");
-    //   $(".start").show();
-    //   // generateHearts();
-      
-      
-
-      
-  //   }
+   
   
 
 
@@ -200,7 +185,7 @@ $('.countDown').click(function(){
     randomProblemSelector = Math.floor((Math.random() * currentGameArray.length));
     selectedProblem = currentGameArray[randomProblemSelector].problem;
     theAnswer = currentGameArray[randomProblemSelector].answer;
-    // $("p").first().html(selectedProblem);
+   
 
     var problemHtml = $('<p></p>').html(selectedProblem);
     $(".problem").append(problemHtml);
@@ -213,6 +198,7 @@ $('.countDown').click(function(){
   if (currentGameArray.length > 0){
     console.log('keep playing');
   } else {
+    clearInterval(interval);
     $('.win').show();
     $(".reset").html(" ");
     $(".start").show();
@@ -221,6 +207,8 @@ $('.countDown').click(function(){
     currentEquation = null;
     theAnswer = null;
     selectedProblem = null;
+    randomProblemSelector = null;
+    
 
     
 
