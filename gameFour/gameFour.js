@@ -110,6 +110,7 @@ console.log(currentGameArray);
         console.log(currentGameArray.length);
         var penguin = $(this).parent().find('.penguin');
         penguin.attr("src", "../StudyPup_assets/Net_Scoop_Ice_1.gif");
+        $('p').remove();
         
         
           currentGameArray.splice(randomProblemSelector,1);

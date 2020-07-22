@@ -62,7 +62,7 @@ console.log(currentGameArray);
   });
 
  
-  var counter = 25;
+  var counter = 1000;
  
 
   

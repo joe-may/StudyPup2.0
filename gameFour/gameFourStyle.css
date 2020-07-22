@@ -1,11 +1,11 @@
 @keyframes animate
 {
   0% {
-      top:10%;
+      top:-10%;
   }
   100% {
          
-    top:110%;    
+    top:100%;    
   }
 }
   .footer { 
@@ -20,19 +20,21 @@
 
 
   
+
+  html { 
+    background: url('../StudyPup_assets/storm_in_sky.gif') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+  }
+
   #time{
       
     font-size: 30px;
   }
-  
-  .snowball {
-      width: 5%;
-      position:absolute;
-	  top:90%;
-	  left:40%;
-	  z-index:1000;
 
-  }
   body {
       text-align: center;
       background-size: cover;
@@ -82,15 +84,15 @@
     .house .iglooWrapper .answer {
         position: absolute;
         color: #333;
-        font-size: 8vh;
+        font-size: 5vh;
         left: 25%;
         margin-top: 5%;
     }
+    
     .house .iglooWrapper .penguin {
         position: absolute;
         width: 50%;
         margin-top: 16%;
-
     }
   
     
@@ -106,13 +108,12 @@
     .problem p {
         position: fixed;
         border-radius: 5%;
-        background-color: cornsilk;
-        color: cadetblue;
-        font-size:12vw;
-        /* background-color: cornflowerblue; */
+        color: white;
+        text-shadow: 20px 20px 20px black, 0 0 5px blue, 0 0 5px darkblue;
+        font-size:9vw;
         width: 40%;
-        margin-left: 30%;
-        top: 59%;
+        left: 30%;
+        top: -12%;
         font-family: 'Titan One';
         z-index: 800;
         cursor: crosshair; 
@@ -142,19 +143,13 @@
     z-index: 900;
   }
  
-  /* .snowmen {
-      /* background-size: 75% 75%;
-      background-repeat: no-repeat;
-      background-image: url(https://i.imgur.com/peo6gAS.gif); */
-      /* cursor: url("https://i.imgur.com/PFfe6oi.png") , auto; */
-      
- 
 
 
   .house .a0 {
-    width: 55%;
-    top: -24%;
-    animation: animate 25s linear infinite;
+    position: fixed;
+    width: 10%;
+    top: 40%;
+    animation: animate 15s linear infinite;
     
     
 }
@@ -173,7 +168,9 @@
 
 
   .house .a1 {
-    width: 55%;
+    position: fixed;
+    width: 10%;
+    left:25%;
     top: -24%;
     animation: animate 25s linear infinite;
 }
@@ -189,10 +186,11 @@
 } 
 
 .house .a2 {
-    width: 55%;
-    top: -32%;
-    left: 27%;
-    animation: animate 25s linear infinite;
+    position:fixed;
+    width: 10%;
+    top: -52%;
+    left: 67%;
+    animation: animate 14s linear infinite;
 }
   .house .a2 .igloo {
     transform: rotateY(180deg);
@@ -210,10 +208,11 @@
 
 
 .house .a3 {
-    width: 55%;
-    top: -3%;
-    left: -3%;
-    animation: animate 25s linear infinite;
+    position: fixed;
+    width: 10%;
+    top: 35%;
+    left: 85%;
+    animation: animate 29s linear infinite;
 }
   .house .a3 .igloo {
     transform: rotateY(180deg);
@@ -229,25 +228,27 @@
 } 
 
 .house .a4 {
-    width: 55%;
+    position: fixed;
+    width: 10%;
     top: -14%;
-    animation: animate 25s linear infinite;
+    animation: animate 28s linear infinite;
 }
  
   .house .a4 .answer {
     left: 50%;
 } 
   .house .a4 .penguin {
- width: 704%;
+    width: 704%;
     margin-top: -125%;
     margin-left: -341%;
     transform: rotatey(1deg);
 } 
 
   .house .a5 {
-    width: 55%;
+    position: fixed;
+    width: 10%;
     top: -63%;
-    animation: animate 25s linear infinite;
+    animation: animate 17s linear infinite;
 }
  
   .house .a5 .answer {
@@ -260,11 +261,12 @@
     transform: rotatey(1deg);
 } 
 
-.house .a6 {
-    width: 55%;
+.house .a6 { 
+    position: fixed;
+    width: 10%;
     top: -43%;
-    left: 10%;
-    animation: animate 25s linear infinite;
+    left: 72%;
+    animation: animate 17s linear infinite;
     
 }
   .house .a6 .igloo {
@@ -282,9 +284,10 @@
 } 
 
 .house .a7 {
-    width: 55%;
-    top: 5%;
-    left: -26%;
+    position: fixed;
+    width: 10%;
+    top: 0%;
+    left: 69%;
     animation: animate 25s linear infinite;
 }
   .house .a7 .igloo {
@@ -294,7 +297,7 @@
     left: 37%;
 } 
   .house .a7 .penguin {
- width: 704%;
+    width: 704%;
     margin-top: -125%;
     margin-left: -341%;
     transform: rotatey(1deg);
